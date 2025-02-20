@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: fanumber-Regular;
+  font-weight: 400;
+  src: url('../src/fonts/YekanBakhFaNum-Regular.woff') format("woff");
+}
+@font-face {
+  font-family: fanumber-Bold;
+  font-weight: 400;
+  src: url('../src/fonts/YekanBakhFaNum-Bold.woff') format("woff");
+}
+@font-face {
+  font-family: payda-Regular;
+  font-weight: 400;
+  src: url('../src/fonts/payda/woff/PeydaWeb-Regular.woff') format("woff");
+}
+@font-face {
+  font-family: payda-Medium;
+  font-weight: 500;
+  src: url('../src/fonts/payda/woff/PeydaWeb-Medium.woff') format("woff");
+}
+@font-face {
+  font-family: payda-SemiBold;
+  font-weight: 600;
+  src: url('../src/fonts/payda/woff/PeydaWeb-SemiBold.woff') format("woff");
+}
+@font-face {
+  font-family: payda-Bold;
+  font-weight: 700;
+  src: url('../src/fonts/payda/woff/PeydaWeb-Bold.woff') format("woff");
+}
+@font-face {
+  font-family: payda-ExtraBold;
+  font-weight: 800;
+  src: url('../src/fonts/payda/woff/PeydaWeb-ExtraBold.woff') format("woff");
+}
+@font-face {
+  font-family: payda-Black;
+  font-weight: 900;
+  src: url('../src/fonts/payda/woff/PeydaWeb-Black.woff') format("woff");
+}
+@font-face {
+  font-family: Montserrat-Regular;
+
+  src: url('../src/fonts/Montserrat-Regular.ttf') format("trueType");
+}
+@font-face {
+  font-family: Montserrat-Bold;
+
+  src: url('../src/fonts/Montserrat-Bold.ttf') format("trueType");
+}
+.font-faNumRegular{
+  font-weight: 400;
+  @apply ltr:font-MontserratRegular;
+  
+}
+.font-faNumBold{
+  font-weight: 700;
+  @apply ltr:font-MontserratBold;
+}
+.font-normal{
+  font-weight: 400;
+  @apply rtl:font-paydaRegular ltr:font-MontserratRegular;
+}
+.font-medium{
+  font-weight: 500;
+  @apply rtl:font-paydaMedium;
+}
+.font-semibold{
+  font-weight: 600;
+  @apply rtl:font-paydaSemiBold ltr:font-MontserratBold;
+}
+.font-bold{
+  font-weight: 700;
+  @apply rtl:font-paydaBold ltr:font-MontserratBold;
+}
+.font-extrabold{
+  font-weight: 800;
+  @apply rtl:font-paydaExtraBold ltr:font-MontserratBold;
+}
+.font-black{
+  font-weight: 900;
+  @apply rtl:font-paydaBlack ltr:font-MontserratBold;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: payda-Regular !important;
+  user-select: none;
+  overflow-x: hidden;
+  background-color: #090A1A;
+}
+/* global styles */
+a {
+  cursor: pointer;
+  transition: all .4s
+}
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.flex-between {
+  @apply flex items-center justify-between;
+}
+
+.transition {
+  @apply transition-all duration-300;
+}
+/* hover */
+.btnHover {
+  transition: all .4s;
+  overflow: hidden;
+  position: relative;
+}
+.btnHover::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient( 120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70% );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+.btnHover:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+.card {
+  transform-style: preserve-3d;
+}
+
+.card img.img {
+  transition: all .4s;
+  pointer-events: none;
+  z-index: 10!important;
+}
+.card:hover img.img {
+  transform: translate3d(-10%, -10%, 20px);
+}
+.card:hover .sneakers {
+  transform: translateZ(40px);
+  opacity: 0.85;
+}
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+/* accordion */
+.acordionBtn{
+  cursor: pointer;
+}
+.acordionBtn > svg{
+  transition: all .4s;
+}
+.acordionBtn > svg.active{
+  transform: rotate(180deg);
+}
+.acordionContent{
+  max-height: 0;
+  overflow: hidden;
+  transition: all .4s;
+}
+.acordionContent.active {
+  max-height: 2000px;
+  overflow: visible;
+}
+/* swiper */
+ /* اسلاید وسطی بزرگ‌تر */
+.popular .swiper-slide-active,.blog .swiper-slide-active {
+  transform: scale(1); /* بزرگ‌تر کردن اسلاید وسطی */
+  opacity: 1;
+  transition: all .4s !important;
+}
+.blog .swiper-slide-active{
+  transform: translateY(110px);
+}
+.popular .swiper-slide-prev{
+  transform: scale(0.5) !important;
+  opacity: .7;
+}
+.blog .swiper-slide-prev,.blog .swiper-slide-next  {
+  transform: scale(0.8) !important; /* کوچک‌تر کردن اسلایدهای کناری */
+  opacity: 0.7;
+  transition: all .4s !important;
+}
+/* اسلایدهای چپ و راست کوچک‌تر */
+.popular .swiper-slide-next,
+.popular .swiper-slide-prev {
+  transform: scale(0.5) !important; /* کوچک‌تر کردن اسلایدهای کناری */
+  opacity: 0.7;
+  transition: all .4s !important;
+}
+.popular .swiper-slide > div > div:last-child{
+  display: none;
+}
+.popular .swiper-slide-active > div > div:last-child{
+  display: block;
+}
+.swiper-button-next::after,.swiper-button-prev::after{
+  content: none !important;
+}
