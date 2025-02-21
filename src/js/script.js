@@ -35,7 +35,7 @@ var popular = new Swiper(".popular", {
   spaceBetween: 20,
   centeredSlides: true, // اسلاید وسطی در مرکز باشد
   autoplay: {
-    delay: 1500,
+    delay: 4000,
     disableOnInteraction: false,
   },
   loop: true,
@@ -57,7 +57,7 @@ var blog = new Swiper(".blog", {
   spaceBetween: 20,
   centeredSlides: true, // اسلاید وسطی در مرکز باشد
   autoplay: {
-    delay: 1500,
+    delay: 4000,
     disableOnInteraction: false,
   },
   loop: true,
