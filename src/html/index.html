@@ -11,11 +11,22 @@
 
 <body class="max-w-[1736px] w-full mx-auto">
 
+  <div id="overlay"></div>
+
+  <!-- menue -->
+   <div class="mobileMenu w-64 bg-black fixed top-0 bottom-0 z-50 -left-72 transition">
+     <ul class="p-6 font-semibold">
+      <li class="mb-8"><a class="text-white hover:text-primary text-2xl">Ev</a></li>
+      <li class="mb-8"><a class="text-white hover:text-primary text-2xl">Hakkımızda</a></li>
+      <li class="mb-8"><a class="text-white hover:text-primary text-2xl">Hizmetler</a></li>
+      <li class="mb-8"><a class="text-white hover:text-primary text-2xl">Haberler</a></li>
+     </ul>
+   </div>
 
   <!-- header -->
   <header>
     <div class="max-w-content mx-auto px-4 py-10">
-      <div class="cursor-pointer w-10 h-10 ml-auto">
+      <div class="cursor-pointer w-10 h-10 ml-auto" id="openMenu">
         <svg class="w-6 sm:w-10" width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4.11169 20H36.1117" stroke="white" stroke-width="3" stroke-linecap="round"/>
           <path d="M19.1117 10L36.1117 10" stroke="white" stroke-width="3" stroke-linecap="round"/>
